@@ -15,8 +15,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # disable the update checking
     config.vm.box_check_update = false
-    # force using 0.4.4 box version
-    config.vm.box_version = "0.4.4"
+
+    # force using 0.5.0 box version
+    # use the latest Vagrant version to get rid of networking error on Ubuntu Xenial
+    config.vm.box_version = "0.5.0"
 
     if File.exists? aliasesPath then
         config.vm.provision "file", source: aliasesPath, destination: "~/.bash_aliases"

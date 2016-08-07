@@ -39,13 +39,13 @@ I created two simple scripts for easily Homestead configuration. For create a Ho
 	# on Windows
 	just double click on homestead.bat
 
-Vagrantfile is now configured to use the box version 0.4.4 and has disabled update checks.
+Vagrantfile is now configured to use the box version 0.5.0 and has disabled update checks.
  If you want to change this jus remove the following lines in [Vagranfile](Vagrantfile):
  
-    # disable the update checking
     config.vm.box_check_update = false
-    # force using 0.4.4 box version
-    config.vm.box_version = "0.4.4"
+    config.vm.box_version = "0.5.0"
+
+To get rid of Xenial networking error, please use the latest Vagrant. Can be downloaded [here](https://www.vagrantup.com/downloads.html).
 
 ### Using the simple ACL
 I've added into this template some classes - [simple ACL](https://gist.github.com/drawmyattention/8cb599ee5dc0af5f4246) - for simple ACL system.
