@@ -5,10 +5,9 @@ Laravel version **5.4**.
 This is the boilerplate project for any Laravel application with packages I'm using. Feel free to fork and edit everything you want. The template has this packages installed:
 
 - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper) Laravel IDE helper to generate helper files for my PhpStorm.
--
-[zizaco/entrust](https://github.com/Zizaco/entrust) Adds ACL to your application.
 - [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar) To simplify application debuging.
 - [laravel/homestead](https://github.com/laravel/homestead) Pre-configured Vagrant box that provides wonderful development environment.
+- [zizaco/entrust](https://github.com/Zizaco/entrust) Adds ACL to your application.
 
 Check [composer.json](composer.json) if you want to know which versions of packages it currently uses.
 Also I added the [contribution](CONTRIBUTION.md), [changelog](CHANGELOG.md) and [license](LICENSE.md) markdown files. If you don't wont to use them, simply delete them.
