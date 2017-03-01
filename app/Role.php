@@ -2,17 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Zizaco\Entrust\EntrustRole;
 
-class Role extends Model
-{
-	/**
-	 * Role to users relation.
-	 *
-	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
-	 */
-	public function users()
-	{
-		return $this->hasMany('App\User', 'role_id', 'id');
-	}
+class Role extends EntrustRole {
+
 }

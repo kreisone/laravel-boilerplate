@@ -1,46 +1,25 @@
 <?php
 
-use App\Role;
 use Illuminate\Database\Seeder;
 
-class RoleTableSeeder extends Seeder
-{
-    public function run()
-    {
-	    if (App::environment() === 'production') {
-		    exit('I just stopped you getting fired. Love, Amo.');
-	    }
+class RoleTableSeeder extends Seeder {
 
-	    DB::table('roles')->truncate();
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run() {
 
-	    Role::create([
-		    'id'            => 1,
-		    'name'          => 'Root',
-		    'description'   => 'Use this account with extreme caution. When using this account it is possible to cause irreversible damage to the system.'
-	    ]);
+//        \App\Role::create([
+//            'name'          => 'user',
+//            'display_name'  => 'User',
+//        ]);
 
-	    Role::create([
-		    'id'            => 2,
-		    'name'          => 'Administrator',
-		    'description'   => 'Full access to create, edit, and update companies, and orders.'
-	    ]);
+//        \App\Role::create([
+//            'name'          => 'admin',
+//            'display_name'  => 'Administrator',
+//        ]);
 
-	    Role::create([
-		    'id'            => 3,
-		    'name'          => 'Manager',
-		    'description'   => 'Ability to create new companies and orders, or edit and update any existing ones.'
-	    ]);
-
-	    Role::create([
-		    'id'            => 4,
-		    'name'          => 'Company Manager',
-		    'description'   => 'Able to manage the company that the user belongs to, including adding sites, creating new users and assigning licences.'
-	    ]);
-
-	    Role::create([
-		    'id'            => 5,
-		    'name'          => 'User',
-		    'description'   => 'A standard user that can have a licence assigned to them. No administrative features.'
-	    ]);
     }
 }

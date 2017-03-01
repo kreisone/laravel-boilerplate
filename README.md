@@ -1,10 +1,13 @@
 # Laravel Boilerplate Project
 
-This is the boilerplate project for any laravel application with packages I'm using. Feel free to fork and edit everything you want. The template has this packages installed:
+Laravel version **5.4**.
+
+This is the boilerplate project for any Laravel application with packages I'm using. Feel free to fork and edit everything you want. The template has this packages installed:
 
 - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper) Laravel IDE helper to generate helper files for my PhpStorm.
-- [laravelcollective/html](https://github.com/LaravelCollective/html) For generating HTML code easily.
-- [laracasts/generators](https://github.com/laracasts/Laravel-5-Generators-Extended) Variety of generators to speed up your development process.
+-
+[zizaco/entrust](https://github.com/Zizaco/entrust) Adds ACL to your application.
+- [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar) To simplify application debuging.
 - [laravel/homestead](https://github.com/laravel/homestead) Pre-configured Vagrant box that provides wonderful development environment.
 
 Check [composer.json](composer.json) if you want to know which versions of packages it currently uses.
@@ -17,73 +20,26 @@ Just clone this repo and issue the following commands (I'm using OS X so this co
 
 	# if you want to remove git version control
 	rm -r .git
-	
+
 	# change origin url
 	git remote set-url origin your-new-git-url
-	
+
 	# after clone you should update all dependencies
 	composer update
-	
-	# if you are not using Intellij
-	rm -r .idea
 
 If you want to use homestead package check the following guide how to easily setup the Homestead.yaml file.
 
 ### Homestead installation
 
 I created two simple scripts for easily Homestead configuration. For create a Homestead.yaml file issue the following command:
-	
+
 	# on Linux or OSX
 	bash homestead.sh
-	
+
 	# on Windows
 	just double click on homestead.bat
 
-Vagrantfile is now configured to use the box version 0.5.0 and has disabled update checks.
- If you want to change this jus remove the following lines in [Vagranfile](Vagrantfile):
- 
-    config.vm.box_check_update = false
-    config.vm.box_version = "0.5.0"
-
-To get rid of Xenial networking error, please use the latest Vagrant. Can be downloaded [here](https://www.vagrantup.com/downloads.html).
-
-### Using the simple ACL
-I've added into this template some classes - [simple ACL](https://gist.github.com/drawmyattention/8cb599ee5dc0af5f4246) - for simple ACL system.
-If you want to use them, read the following doc:
-
-##### Adding new Role
-
-If you want to add new role, open database/seeds/RoleTableSeeder.php and add create the new role object:
- 
-```php
-Role::create([
-    'id'            => 1,
-    'name'          => 'Admin',
-    'description'   => 'Description of this role'
-]);
-```
-    
-Then protect your routes with the roles middleware.
-
-```php
-Route::group(['middleware' => ['roles'], 'roles' => ['admin']], function(){
-	// add here all protected routes
-});
-```
-	
-If you don't want to use this ACL remove this files:
-
-	database/seed/RoleTableSeeder.php
-	database/migrations/2016_08_06_141308_create_roles_table.php
-	app/Role.php
-	app/Http/Middleware/CheckRole.php
-	
-Files to edit:
-	
-	app/User.php - delete all role stuff
-	app/Http/Kernel.php - delte role middleware in routeMiddlewares
-	database/migrations/2014_10_12_000000_create_users_table.php - delete role_id
-		
+You should use latest Vagrant and homeastead box version. You can get latest Vagrant [here](https://www.vagrantup.com/downloads.html).
 
 ### License
 
